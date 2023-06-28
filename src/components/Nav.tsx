@@ -24,7 +24,6 @@ const itemMotion = {
 export default function Nav() {
   const [toggled, setToggled] = useState(false);
   const matches = useMediaQuery("(min-width: 1280px)");
-  console.log(matches);
   return (
     <nav className="relative mx-8 mb-24 flex justify-between items-center pt-12 pb-6 font-medium md:mx-16 lg:mx-32">
       <svg
@@ -85,7 +84,7 @@ export default function Nav() {
       )}
 
       {toggled && !matches && (
-        <div className="flex fixed bg-white bottom-0 left-0 w-full h-screen items-center justify-center">
+        <div className="flex fixed bg-white bottom-0 left-0 w-full h-screen items-center justify-center z-40">
           <motion.div
             variants={navMotion}
             animate="visible"
